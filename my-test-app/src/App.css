@@ -1,38 +1,98 @@
-.App {
-  text-align: center;
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.swiper-container {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+  /* Fix of Webkit flickering */
+  z-index: 1;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
+.swiper-container-vertical > .swiper-wrapper {
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.swiper-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  transition-property: transform;
+  box-sizing: content-box;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.swiper-container-android .swiper-slide,
+.swiper-wrapper {
+  transform: translate3d(0px, 0, 0);
+}
+.swiper-container-multirow > .swiper-wrapper {
+  flex-wrap: wrap;
+}
+.swiper-container-multirow-column > .swiper-wrapper {
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.swiper-container-free-mode > .swiper-wrapper {
+  transition-timing-function: ease-out;
+  margin: 0 auto;
+}
+.swiper-container-pointer-events {
+  touch-action: pan-y;
+  &.swiper-container-vertical {
+    touch-action: pan-x;
   }
-  to {
-    transform: rotate(360deg);
+}
+.swiper-slide {
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition-property: transform;
+}
+.swiper-slide-invisible-blank {
+  visibility: hidden;
+}
+/* Auto Height */
+.swiper-container-autoheight {
+  &,
+  .swiper-slide {
+    height: auto;
+  }
+
+  .swiper-wrapper {
+    align-items: flex-start;
+    transition-property: transform, height;
+  }
+}
+
+/* CSS Mode */
+.swiper-container-css-mode {
+  > .swiper-wrapper {
+    overflow: auto;
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  > .swiper-wrapper > .swiper-slide {
+    scroll-snap-align: start start;
+  }
+}
+.swiper-container-horizontal.swiper-container-css-mode {
+  > .swiper-wrapper {
+    scroll-snap-type: x mandatory;
+  }
+}
+.swiper-container-vertical.swiper-container-css-mode {
+  > .swiper-wrapper {
+    scroll-snap-type: y mandatory;
   }
 }

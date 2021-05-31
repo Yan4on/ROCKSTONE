@@ -1,0 +1,77 @@
+.create-posts {
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.add-posts {
+  display: flex;
+  justify-content: space-between;
+}
+.add-posts textarea {
+  width: 350px;
+  height: 100px;
+  border-radius: 4px;
+  text-align: center;
+  padding-top: 60px;
+  outline: none;
+  border: 1px solid #8798;
+}
+.add-posts textarea:active {
+  outline: 0.5px solid rgba(90, 72, 109, 0.533);
+}
+.add-posts button {
+  height: 40px;
+  width: 70px;
+  border-radius: 4px;
+  outline: none;
+  margin-left: 10px;
+  border: none;
+  background-color: #8798;
+}
+.add-posts button:active {
+  background-color: rgba(133, 70, 201, 0.533);
+}
+
+.add-posts button:hover {
+  opacity: 1;
+  background-color: rgba(82, 100, 201, 0.533);
+}
+
+.list-group {
+  list-style: none;
+  padding-left: 0;
+}
+.item {
+  opacity: 0.5;
+  animation: showing 0.3s forwards ease-in 0.5s;
+  font-size: 20px;
+  margin: 10px auto;
+  overflow-wrap: break-word;
+}
+.items-list {
+  margin: 30px 0 0 0;
+  text-align: left;
+}
+
+.text-container h1 {
+  font-size: 30px;
+  font-family: arial;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.2);
+  background-image: url("https://i.artfile.ru/2560x1728_828847_[www.ArtFile.ru].jpg");
+  background-size: 270px;
+  background-repeat: repeat-x;
+  -webkit-background-clip: text;
+  animation: animate 60s linear infinite;
+  margin: 0;
+}
+
+@keyframes animate {
+  0% {
+    background-position: left 0px top 0px;
+  }
+  70% {
+    background-position: left 800px top 0px;
+  }
+}
