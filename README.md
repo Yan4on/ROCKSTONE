@@ -1,7 +1,8 @@
-# React slider
-## Страница 1: ToDo лист с анимацией текста
-## Страница 2: Часы
+#  Одностраничное приложение React slider
+## Главная Страница : ToDo лист с анимацией текста
+## Свайп влево: Часы
 ## Технологии: 
+- CSS анимация
 - JavaScript
 - React
 - React Swiper
@@ -10,6 +11,7 @@
 
 Для установки приложения: 
 - git clone
+- npm i
 - npm run start
 
 https://yan4on.github.io/React-Slider-ToDolist-and-Time/
